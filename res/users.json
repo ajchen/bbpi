@@ -1,0 +1,18 @@
+{
+"desc":"user accounts for testing",
+"users": [
+  {
+  "user_id":"aj-stanford",
+  "password":"cGFzc3dvcmQ="  
+  },
+  {
+  "user_id":"aj-pamf",
+  "password":"cGFzc3dvcmQ="  
+  },
+  {
+  "user_id":"aj-svr",
+  "password":"cGFzc3dvcmQ="  
+  }
+
+]
+}

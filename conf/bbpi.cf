@@ -1,0 +1,55 @@
+###############################################################################
+# Copyright (c) 2013, activ3p inc.
+# All rights reserved.
+#
+###############################################################################
+
+####configuration file for bbpi####
+
+#application version
+version=0.1.0
+
+#log4j property file path
+log4j.file=/data/bbpi/conf/log4j.cf
+
+#web application host/context
+#host url: http://host[:port] (no trailing /), e.g. http://localhost:8080
+host.url=http://localhost:8080
+#context: empty for ROOT, or /bbpi
+webapp.context=/bbpi
+#webapp.context=
+
+####client registration####
+
+#dynamic reg enabled or not
+client.reg.dynamic=true
+#allow dynamic update or not
+client.reg.dynamic.update=true
+
+####authorization###
+
+#in second
+auth.token.expires_in=3600
+
+#####database##########
+
+data.src=local
+
+#mongodb
+mongo.host=localhost
+mongo.port=27017
+mongo.db.name=bbpi
+
+#local db files
+db.user.file=res/users.json
+db.data.file=res/data.json
+
+#ehr connector
+
+
+####testing###########
+
+#enable client testing 
+test.client.enabled=true
+test.provider.count=3
+

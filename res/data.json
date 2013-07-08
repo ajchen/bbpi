@@ -1,0 +1,86 @@
+{
+"desc":"patient data for testing",
+"data": [
+  {
+  "id":"0001",
+  "type":"visit",
+  "name":"doctor visit",
+  "date":"2013-01-02",
+  "vitals": [
+    {
+	"code":"8302-2",
+	"name":"height",
+	"value":66.0,
+	"dataType":"double",
+	"unit":"in"
+	},
+    {
+	"code":"3141-9",
+	"name":"weight",
+	"value":222.0,
+	"dataType":"double",
+	"unit":"lb"
+	},
+    {
+	"code":"8462-4",
+	"name":"dbp",
+	"value":95,
+	"dataType":"integer",
+	"unit":"mmHg"
+	},
+    {
+	"code":"8480-6",
+	"name":"sbp",
+	"value":150,
+	"dataType":"integer",
+	"unit":"mmHg"
+	}
+	]
+  },
+  {
+  "id":"0002",
+  "type":"lab",
+  "name":"lab panel",
+  "date":"2013-02-03",
+  "tests": [
+    {
+	"code":"2093-3",
+	"name":"cholesterol",
+	"value":300,
+	"dataType":"integer",
+	"unit":""
+	},
+    {
+	"code":"2085-9",
+	"name":"hdl",
+	"value":30,
+	"dataType":"integer",
+	"unit":""
+	},
+    {
+	"code":"2089-1",
+	"name":"ldl",
+	"value":200,
+	"dataType":"integer",
+	"unit":""
+	},
+    {
+	"code":"2571-8",
+	"name":"triglyceride",
+	"value":200,
+	"dataType":"integer",
+	"unit":""
+	},
+    {
+	"code":"4548-4",
+	"name":"hba1c",
+	"value":7.7,
+	"dataType":"double",
+	"unit":""
+	}
+	]
+  }
+
+  
+]
+}

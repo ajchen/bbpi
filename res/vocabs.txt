@@ -1,0 +1,5 @@
+Cholesterol	LOINC	2093-3	mg/dL
+HDL	LOINC	2085-9	mg/dL
+LDL	LOINC	2089-1	mg/dL
+Triglyceride	LOINC	2571-8	mg/dL
+Hemoglobin A1c	LOINC	4548-4	%

@@ -1,0 +1,91 @@
+<project default="compile" basedir=".">
+    <description>
+    	ant build file for bbpi project. must run from current dir.
+    </description>
+	
+	<!-- Properties -->
+
+	<!-- project files-->
+	<property name="app.name" value="bbpi"/>
+	<property name="app.home" value="."/> 
+	<property name="src.dir" value="${app.home}/src"/>
+	<property name="build.dir" value="${app.home}/build"/>
+	<property name="class.dir" value="${build.dir}/classes"/>
+	<property name="tmp.dir" value="${build.dir}/tmp"/>
+	<property name="package.dir" value="${tmp.dir}/bbpi"/>
+	<property name="web.dir" value="${app.home}/web"/>
+	<property name="lib.dir" value="${web.dir}/WEB-INF/lib"/>
+	<property name="dist.dir" value="${app.home}"/>	
+	
+	<!-- output-->
+	<property name="jar.file" value="${dist.dir}/${app.name}.jar"/>
+	<property name="src-jar.file" value="${dist.dir}/${app.name}-src.jar"/>
+	<property name="war.file" value="${dist.dir}/${app.name}.war"/>
+	<property name="package.file" value="${dist.dir}/${app.name}-package.jar"/>
+	
+
+	<!-- Build Targets -->
+
+	<path id="classpath-compile">
+		<fileset dir="${lib.dir}">
+		    <include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="clean" description="delete build dirs" >
+	    <delete dir="${build.dir}" includeemptydirs="true" failonerror="false" />
+ 	</target>
+	 
+	<target name="init" description="create build dir">
+	    <mkdir dir="${build.dir}"/>
+	    <mkdir dir="${class.dir}"/>
+	</target>
+
+	<target name="compile" depends="init" description="compile java classes" >
+	    <javac srcdir="${src.dir}" 
+	    	classpathref="classpath-compile" 
+	    	destdir="${class.dir}"
+	    	encoding="utf-8" debug="on"  deprecation="off" includeantruntime="false" />
+	</target>
+	
+	<target name="jar" depends="clean, init, compile" description="make jar files for app">
+	    <jar basedir="${class.dir}" jarfile="${jar.file}" />
+	    <jar basedir="${src.dir}" jarfile="${src-jar.file}" />
+ 	</target>
+
+	<target name="war" depends="jar" description="make war file for webapp">
+	    <delete dir="${tmp.dir}" includeemptydirs="true" failonerror="true" />
+	    <mkdir dir="${tmp.dir}"/>
+	    <copy todir="${tmp.dir}">
+	      	<fileset dir="${web.dir}" >
+				<exclude name="**/servlet-api.jar"/>
+			</fileset>
+	    </copy>
+		<copy todir="${tmp.dir}/WEB-INF/lib" file="${jar.file}"  />
+	    <jar basedir="${tmp.dir}" jarfile="${war.file}" />
+	</target>
+	
+	<!--copy everything to package dir and jar it -->
+	<target name="package" depends="war" description="package config and war file in one file">
+	    <delete dir="${tmp.dir}" includeemptydirs="true" failonerror="true" />
+	    <mkdir dir="${tmp.dir}"/>
+	    <mkdir dir="${package.dir}"/>
+	    <mkdir dir="${package.dir}/bin"/>
+	    <mkdir dir="${package.dir}/conf"/>
+	    <mkdir dir="${package.dir}/logs"/>
+	    <mkdir dir="${package.dir}/res"/>
+		<copy todir="${package.dir}/bin">	  
+	      	<fileset dir="${app.home}/bin" />
+	    </copy>		
+		<copy todir="${package.dir}/conf">	    
+	      	<fileset dir="${app.home}/conf" />
+	    </copy>		
+		<copy todir="${package.dir}/res">	    
+	      	<fileset dir="${app.home}/res" />
+	    </copy>		
+		<copy file="${war.file}" todir="${package.dir}" />
+	    <jar basedir="${tmp.dir}" jarfile="${package.file}" />
+	</target>
+	
+
+</project>

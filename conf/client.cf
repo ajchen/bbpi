@@ -1,0 +1,68 @@
+###############################################################################
+# Copyright (c) 2013, activ3p inc.
+# All rights reserved.
+#
+###############################################################################
+
+#### configuration file for Client test application ####
+#
+# Test case: 
+#   User uses one patient application (client) to pull data from three providers EHRs.  
+# Test setup: 
+#   1 user in client application. 3 providers with 3 different patient user names. 
+#   for testing, use the same API endpoints for 3 providers. 
+#   BBPI is running on localhost:8080.  
+
+
+####for client registration###
+#api endpoint
+reg.url=http://localhost:8080/bbpi/register
+
+#client app info
+reg.client_name=BBPI Client Test App
+reg.client_uri=http://activ3p.com
+reg.token_endpoint_auth_method=client_secret_basic
+reg.redirect_uris=http://localhost:8080/bbpi/client-oauth-callback
+reg.response_types=code
+reg.grant_types=authorization_code
+reg.scope=summary search list
+
+
+####user in client app####
+#
+user.id=aj
+
+####providers and patients (same as in EHRs) ####
+# for test purpose, encryted password = "password"
+provider.1.name=Stanford Hospital
+provider.1.user.id=aj-stanford
+provider.1.user.password=cGFzc3dvcmQ=
+provider.2.name=Palo Alto Medical Foundation
+provider.2.user.id=aj-pamf
+provider.2.user.password=cGFzc3dvcmQ=
+provider.3.name=Silicon Valley Radiology
+provider.3.user.id=aj-svr
+provider.3.user.password=cGFzc3dvcmQ=
+
+
+####for user authorization###
+#call 1
+#api endpoint
+auth.url=http://localhost:8080/bbpi/authorize
+#client parameters
+auth.response_type=code
+auth.redirect_uri=http://localhost:8080/bbpi/client-oauth-callback
+auth.scope=summary search list
+
+#call 2
+#api endpoint
+auth.token.url=http://localhost:8080/bbpi/token
+
+
+####for patient data####
+
+#api endpoints
+data.list.url=http://localhost:8080/bbpi/record
+data.summary.url=http://localhost:8080/bbpi/record/summary
+
+	
