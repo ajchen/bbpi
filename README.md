@@ -33,7 +33,7 @@ System requirements:
 
 Installation instruction:
 
-(1) Install Java 1.6, e.g. in /java/java6. Set JAVA_HOME in your environment. Include <JAVA_HOME>/bin in your path.
+(1) Install Java 1.6, e.g. in /java/java6. Set JAVA_HOME in your environment. Include [JAVA_HOME]/bin in your path.
 
 (2) Install Apache Tomcat web server (version 6.0), e.g. in /tomcat/tomcat6.
 
@@ -57,7 +57,7 @@ Edit bin/startup.sh and bin/shutdown.sh: set TOMCAT_HOME to your tomcat director
 
 (If your BBPI is not installed in /data/bbpi, you also need to correct the log4j.cf file path in conf/bbpi.cf and log file path in conf/log4j.cf.)
 
-Deploy bbpi on tomcat: copy bbpi.war from /data/bbpi/ directory to <tomcat>/webapps/ directory.
+Deploy bbpi on tomcat: copy bbpi.war from /data/bbpi/ directory to [tomcat]/webapps/ directory.
 
 Start BBPI:
 
