@@ -4,7 +4,7 @@ BBPI is an easy-to-use API module implementing Blue Button Plus (BB+) specs. Itâ
 
 To meet Meaningful Use stage 2 and 3 requirements, care providers need to enable their EHR to exchange patient data with patient tools, HIEs, or other EHRs. BB+ specs developed by ONC S&I Frameworkâ€™s group offers the desired security, functionalities and usability for a variety of data holders. Activ3p believes adoption of BB+ specs really depends on how easy the data holders and EHR vendors can integrate BB+ API with existing EHRs. 
 
-Design principles for BBPI:
+1. Design principles for BBPI:
 
 (1). BBPI must be an end-to-end solution for BB+ API so that care providers can install it in front of EHR and be able to exchange EHR data right away. It has to be that simple.
 
@@ -12,7 +12,7 @@ Design principles for BBPI:
 
 (3). BBPI must be able to exchange patient data in C-CDA format because it is required by MU 2&3. Because C-CDA is so complicated, BBPI must take care of the complexity to prevent EHR admin from becoming insane when given the 500+ pages C-CDA guide.
 
-Brief outlines of API functions:
+2. Brief outlines of API functions:
 
 (1). Dynamic client registration according to OAuth2 specs. 
 
@@ -20,17 +20,18 @@ Brief outlines of API functions:
 
 (3). After OAuth2 authorization, provide patient data on demand to applications controlled by patients.  Search results of patient data are returned in json format. Patient record summary document is returned in C-CDA (xml).   
 
-System requirements:
+3. System requirements:
 
-  Java, Apache Tomcat web server
+(1) Java, Apache Tomcat web server
   
-  MongoDB
+(2) MongoDB
   
-  BBPI package
+(3) BBPI package
   
-  Any operation system supporting tomcat and mongodb, such as Windows and Linux.
+(4) Any operation system supporting tomcat and mongodb, such as Windows and Linux.
 
-Installation instruction:
+
+4. Installation instruction:
 
 (1) Install Java 1.6, e.g. in /java/java6. Set JAVA_HOME in your environment. Include <JAVA_HOME>/bin in your path.
 
@@ -69,7 +70,7 @@ Test setup is defined in /data/bbpi/conf/client.cf. If tomcat is running on a di
 
 
 
-
+---
 Activ3p team
 
 
