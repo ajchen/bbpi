@@ -21,10 +21,10 @@ Brief outlines of API functions:
 (3). After OAuth2 authorization, provide patient data on demand to applications controlled by patients.  Search results of patient data are returned in json format. Patient record summary document is returned in C-CDA (xml).   
 
 System requirements:
-	Java, Apache Tomcat web server
-	MongoDB
-	BBPI package
-	Any operation system supporting tomcat and mongodb, such as Windows and Linux.
+  Java, Apache Tomcat web server
+  MongoDB
+  BBPI package
+  Any operation system supporting tomcat and mongodb, such as Windows and Linux.
 
 Installation instruction:
 
