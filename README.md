@@ -21,9 +21,13 @@ Brief outlines of API functions:
 (3). After OAuth2 authorization, provide patient data on demand to applications controlled by patients.  Search results of patient data are returned in json format. Patient record summary document is returned in C-CDA (xml).   
 
 System requirements:
+
   Java, Apache Tomcat web server
+  
   MongoDB
+  
   BBPI package
+  
   Any operation system supporting tomcat and mongodb, such as Windows and Linux.
 
 Installation instruction:
@@ -35,13 +39,17 @@ Installation instruction:
 (3) Install MongoDB  database (version 2.4 or later)
 
 Create directory: /data/db
+
 Start mongodb:
+
   $ mongod 
 
 (4) Install BBPI
 
 Copy bbpi-package.jar to /data directory.
+
 Unpack bbpi package in /data directory:
+
   $ jar xvf bbpi-package.jar
 
 Edit bin/startup.sh and bin/shutdown.sh: set TOMCAT_HOME to your tomcat directory; set -Dbbpi.conf to your bbpi.cf file path.
@@ -49,12 +57,17 @@ Edit bin/startup.sh and bin/shutdown.sh: set TOMCAT_HOME to your tomcat director
 (If your BBPI is not installed in /data/bbpi, you also need to correct the log4j.cf file path in conf/bbpi.cf and log file path in conf/log4j.cf.)
 
 Deploy bbpi on tomcat: copy bbpi.war from /data/bbpi/ directory to <tomcat>/webapps/ directory.
+
 Start BBPI:
+
   $ /data/bbpi/bin/startup.sh
 
 (5) Test BB+ API: Run client test application at http://localhost:8080/bbpi/client. 
 
 Test setup is defined in /data/bbpi/conf/client.cf. If tomcat is running on a different host, you should use the right host:port to run bbpi server and change the host:port in client.cf.  Test users and providers are defined in files under /data/bbpi/res/ directory.
+
+
+
 
 
 Activ3p team
