@@ -36,7 +36,7 @@ Installation instruction:
 
 Create directory: /data/db
 Start mongodb:
-  $ mongod
+  $ mongod 
 
 (4) Install BBPI
 
