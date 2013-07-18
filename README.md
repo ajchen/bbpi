@@ -1,4 +1,5 @@
-README
+bbpi
+====
 
 BBPI is an easy-to-use API module implementing Blue Button Plus (BB+) specs. It’s designed to be so easy to install and integrate that care providers or EHR vendors can simply drop it in front of EHR to enable health information exchange (HIE) immediately.
 
@@ -70,7 +71,7 @@ Test setup is defined in /data/bbpi/conf/client.cf. If tomcat is running on a di
 
 
 
----
+====
 Activ3p team
 
 
